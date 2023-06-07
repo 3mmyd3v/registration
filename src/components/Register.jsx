@@ -1,9 +1,10 @@
 import React from "react";
+import header_logo from "./rC.jpg";
 import "./Register.css";
 import { Country, State, City } from "country-state-city";
 
 import Select from "react-select";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const Register = (props) => {
   const age = [
@@ -14,10 +15,6 @@ const Register = (props) => {
     { value: "Age 35", label: "Age 35" },
   ];
   const marital = [
-    { value: "Yes", label: "Yes" },
-    { value: "No", label: "No" },
-  ];
-  const volunteer = [
     { value: "Yes", label: "Yes" },
     { value: "No", label: "No" },
   ];
@@ -52,7 +49,7 @@ const Register = (props) => {
   return (
     <div className="container">
       <div className="header">
-        <img src="./images/rC.jpg" alt="RC" height="100px" width="50%" />
+        <img src={header_logo} alt="RC" height="100px" width="50%" />
         <h1>***REFRESH CONFERENCE'23***</h1>
         <h3>VOLUNTEERS REGISTRATION</h3>
       </div>
@@ -60,7 +57,7 @@ const Register = (props) => {
       <form action="https://formsubmit.co/aaronak497@gmail.com" method="POST">
         <p>Kindly fill your personal details below</p>
 
-        <label for="Firstname">First Name*</label>
+        <label htmlFor="Firstname">First Name*</label>
         <input
           autoFocus
           required
@@ -68,14 +65,14 @@ const Register = (props) => {
           type="text"
           name="Firstname"
           placeholder="firstname e.g Emmanuel"></input>
-        <label for="Lastname">Last Name*</label>
+        <label htmlFor="Lastname">Last Name*</label>
         <input
           required
           id="name"
           type="text"
           name="Lastname"
           placeholder="lastname e.g Ayetan"></input>
-        <label for="Email">Email*</label>
+        <label htmlFor="Email">Email*</label>
         <input
           required
           autoComplete="email"
@@ -83,7 +80,7 @@ const Register = (props) => {
           type="email"
           name="Email"
           placeholder="example@gmail.com"></input>
-        <label for="Gender"> Gender</label>
+        <label htmlFor="Gender"> Gender</label>
         <Select
           name="Gender"
           className="select_input"
@@ -94,7 +91,7 @@ const Register = (props) => {
           onChange={setValue}
         />
 
-        <label for="Age_Range">Age Range</label>
+        <label htmlFor="Age_Range">Age Range</label>
         <Select
           name="Age_Range"
           className="select_input"
@@ -106,10 +103,10 @@ const Register = (props) => {
           // isSearchable
         />
 
-        <label for="Phone_Number">Phone</label>
+        <label htmlFor="Phone_Number">Phone</label>
         <input type="tel" id="phone" name="Phone_Number"></input>
 
-        <label for="Country">Country of Residence*</label>
+        <label htmlFor="Country">Country of Residence*</label>
 
         <Select
           name="Country"
@@ -128,7 +125,7 @@ const Register = (props) => {
           }}
         />
 
-        <label for="State">State of Residence*</label>
+        <label htmlFor="State">State of Residence*</label>
         <Select
           name="State"
           className="select_input"
@@ -145,7 +142,7 @@ const Register = (props) => {
             setSelectedState(item);
           }}
         />
-        <label for="Town">Town of Residence*</label>
+        <label htmlFor="Town">Town of Residence*</label>
         <Select
           name="Town"
           className="select_input"
@@ -166,7 +163,7 @@ const Register = (props) => {
           }}
         />
 
-        <label for="Marital">Marital Status*</label>
+        <label htmlFor="Marital">Marital Status*</label>
         <Select
           name="Marital"
           className="select_input"
@@ -178,7 +175,7 @@ const Register = (props) => {
           // isSearchable
         />
 
-        <label for="Occupation">Occupation*</label>
+        <label htmlFor="Occupation">Occupation*</label>
         <Select
           name="Occupation"
           className="select_input"
@@ -190,7 +187,9 @@ const Register = (props) => {
           // isSearchable
         />
 
-        <label for="Volunteer">Will you like to serve as a volunteer?</label>
+        <label htmlFor="Volunteer">
+          Will you like to serve as a volunteer?
+        </label>
 
         <select
           className="picker"
@@ -201,9 +200,9 @@ const Register = (props) => {
           <option value={"Yes"}>Yes</option>
           <option value={"No"}>No</option>
         </select>
-        {resultsPerPage == "Yes" ? (
+        {resultsPerPage === "Yes" ? (
           <div className="depart">
-            <label for="Department">Select your Department</label>
+            <label htmlFor="Department">Select your Department</label>
             <Select
               name="Department"
               className="select_input"
@@ -216,7 +215,7 @@ const Register = (props) => {
             />
           </div>
         ) : (
-          <h1></h1>
+          <></>
         )}
 
         <div className="bottom">
