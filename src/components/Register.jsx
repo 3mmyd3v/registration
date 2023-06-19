@@ -1,5 +1,5 @@
 import React from "react";
-import header_logo from "./rC.jpg";
+import header_logo from "./rC-removebg-preview.png";
 import "./Register.css";
 import { Country, State, City } from "country-state-city";
 
@@ -49,7 +49,7 @@ const Register = (props) => {
   return (
     <div className="container">
       <div className="header">
-        <img src={header_logo} alt="RC" height="100px" width="50%" />
+        <img src={header_logo} alt="RC" height="100px" width="100%" />
         <h1>***REFRESH CONFERENCE'23***</h1>
         <h3>VOLUNTEERS REGISTRATION</h3>
       </div>
