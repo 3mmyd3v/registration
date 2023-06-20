@@ -7,6 +7,9 @@ input {
     color: #393c41;
 }
 
+img {
+    margin-bottom: 40px;
+}
 
 option {
     height: 100px;
